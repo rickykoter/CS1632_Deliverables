@@ -12,18 +12,23 @@ import java.util.Scanner;
 
 public class CoffeeMakerQuest {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		Player player = new Player();
 		Map map = null;
 		try {
 			map = initializeMap();
 		} catch (Exception e) {
 			e.printStackTrace();
+			throw e;
 		}
-
+		
 		Game g = new Game(map, player);
 		Scanner s = new Scanner(System.in);
+		
 		System.out.println(g.getInformation());
+		
+		// Main Game loop that finishes when game goes into
+		// 		a winning or losing state
 		while (g.getStatus() == GameStatus.IN_PROGRESS) {
 			System.out.print(">> ");
 			String d = s.nextLine();
@@ -31,12 +36,23 @@ public class CoffeeMakerQuest {
 		}
 	}
 
+	// Initializes and creates a map with predefined rooms and furniture that
+	// has 5 rooms each with unique room names and furniture descriptions.
+	// Items are dispersed at predefined room indexes throughout the map
+	// that the player may acquire.
 	public static Map initializeMap() throws Exception {
 		Map m = new Map();
+		// Set of unique roomAdjectives (room descriptions), furniture names, and furniture 
+		// 		adjectives that are associated with one another by index.
 		String[] rmAdj = { "Small", "Funny", "Rigid", "Big", "Northern" };
 		String[] furNm = { "desk", "armoire", "bed", "couch", "futon" };
 		String[] furAdj = { "decrepit", "Armenian", "bare", "comfy", "futuristic" };
-		int[] itmLoc = { 0, 1, 3 };
+		
+		// Item locations by index: 
+		//		{ coffee location index, cream location index, sugar location index }
+		int[] itmLoc = { 0, 1, 3 }; 
+		
+		//Append each new room and its new furniture using the predefined attributes above
 		int numRooms = rmAdj.length;
 		for (int i = 0; i < numRooms; i++) {
 			Furniture f = new Furniture(furAdj[i], furNm[i]);
@@ -44,11 +60,14 @@ public class CoffeeMakerQuest {
 				System.out.println("Invalid room");
 			}
 		}
+		
+		// Set the rooms items to a new item based on the predefined location
+		// 		and type given by itmLoc.
 		int i = 0;
 		Room[] rooms = m.getRooms();
 		for (int r : itmLoc) {
 			Room tmp = rooms[r];
-			tmp.setItem(new Item("", ItemType.values()[i % 3]));
+			tmp.setItem(new Item("nifty", ItemType.values()[i % 3]));
 			i++;
 		}
 		return m;

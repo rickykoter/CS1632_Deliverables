@@ -20,7 +20,13 @@ public class Game {
 		status = GameStatus.IN_PROGRESS;
 		player = p;
 	}
-
+	
+	
+	// Given a command string, cmd, the game will maintain state of the game
+	// 		for the appropriate command (n, N, s, S, l, L, d, D, h, H)
+	//		and build a response string that describes the updated state
+	//		including the necessary information on the player, map, 
+	//		current room, game status, and room attributes such as items. 
 	public String progress(String cmd) {
 		StringBuilder result = new StringBuilder("\n----------\n");
 		if (cmd != null) {
@@ -63,6 +69,11 @@ public class Game {
 		return result.toString();
 	}
 
+	
+	// If a room exists to the North of the currentRoom, then
+	// 		a door exists, and the currentRoom will be changed to
+	//		said, north room and true will be returned. 
+	//		Otherwise, return false.
 	private boolean moveNorth() {
 		if (currentRoom != null && currentRoom.getNorth() != null) {
 			currentRoom = currentRoom.getNorth();
@@ -71,6 +82,11 @@ public class Game {
 		return false;
 	}
 
+	
+	// If a room exists to the South of the currentRoom, then
+	// 		a door exists, and the currentRoom will be changed to
+	//		said, South room and true will be returned. 
+	//		Otherwise, return false.
 	private boolean moveSouth() {
 		if (currentRoom != null && currentRoom.getSouth() != null) {
 			currentRoom = currentRoom.getSouth();
@@ -79,6 +95,11 @@ public class Game {
 		return false;
 	}
 	
+	
+	// Depending on the player's drink's return,
+	//		the status changes to GameStatus.WIN and returns
+	//		true if drink is true and status changes to 
+	//		GameStatus.LOSE and returns false if drink is false
 	private boolean drink(){
 		if (player.drink()) {
 			status = GameStatus.WIN;
@@ -89,6 +110,12 @@ public class Game {
 		}
 	}
 	
+	
+	// If an item exists in the currentRoom (not null)
+	//		then have the player acquire the item given
+	//		said item's type and return that functions
+	//		boolean return value upon success/failure. 
+	//		Otherwise, it simply returns false.
 	private boolean look() {
 		Item i = currentRoom.getItem();
 		if (i == null)
@@ -96,6 +123,13 @@ public class Game {
 		return player.acquireItem(i.getType());
 	}
 
+	
+	// Given the inventory returned for the player,
+	//		a result string is built that is 
+	//		properly formatted for display and
+	//		includes whether or not the player has
+	//		each item: 
+	//		You have <item type>! or You do not have <item type>.
 	private String getInventory() {
 		StringBuilder result = new StringBuilder();
 		boolean[] inv = player.getInventory();
@@ -121,6 +155,9 @@ public class Game {
 		return result.append("\n").toString();
 	}
 
+	
+	//	Builds and returns a formatted string that contains each command and
+	//		its description for use.
 	public String getHelpInfo() {
 		StringBuilder result = new StringBuilder();
 		result.append("To play the game, enter one of the following commands each iteration: \n");
@@ -142,6 +179,8 @@ public class Game {
 		return status;
 	}
 
+	// Builds and returns a formatted string describing the current state
+	//		of the game involving the Player, the currentRoom, and its furniture.
 	public String getInformation() {
 		StringBuilder result = new StringBuilder();
 		result.append("\nYou are in the " + currentRoom.getDescription() + " room.\n");

@@ -5,8 +5,12 @@
  * 				name and description.
  */
 public class Furniture {
-	private String description;
-	private String name;
+	private String description; // The non-unique, non-null, non-empty 
+								//		string describing the furniture
+	
+	private String name;		// The unique, non-null, non-empty 
+								//		string describing the type/name
+								//		of the furniture.
 
 	public Furniture(String desc, String nm) throws Exception {
 		if (desc == null || nm == null || desc.isEmpty() || nm.isEmpty()){
