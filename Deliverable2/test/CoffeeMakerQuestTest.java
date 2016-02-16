@@ -24,7 +24,7 @@ public class CoffeeMakerQuestTest {
 		CoffeeMakerQuest cm = new CoffeeMakerQuest();
 		Map m = CoffeeMakerQuest.initializeMap();
 		assertNotNull(m);
-		assertEquals(m.getRooms().length, 5);
+		assertEquals(m.getRooms().length, 6);
 	}
 
 }
