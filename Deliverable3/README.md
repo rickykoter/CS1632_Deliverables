@@ -34,7 +34,7 @@ so that I may customize and save my Voat experience and configurations.
 	testSetBio():	
 		Given that a user is logged in
 		And on the account manage page,
-		When when the user enters and saves a bio for his/her account,
+		When the user enters and saves a bio for his/her account,
 		Then the bio will be set for his/her account.  
 
 
@@ -76,16 +76,17 @@ I would like to preview comments and replies on posts,
 so that I may see what how my comment text will be formatted once submitted.
 
 	testCommentOnPostPreviewEmpty():
-		Given that a user has selected to reply to a comment in "[POST]Anchor" post
-		And the user has not entered text into the subsequent comment box,
-		When the user clicks on the preview button for that comment,
-		Then the user will be shown a message to enter text in order to see a preview.
-
-	testCommentOnCommentPreviewEmpty():
 		Given that a user is in the comments section of the "[POST]Anchor" post
 		And the user has entered text into the main comment box,
 		When the user clicks on the preview button,
 		Then the user will be shown a preview containing the text they entered into the comment box.
+
+	testCommentOnCommentPreviewEmpty():
+		Given that a user has selected to reply to a comment, "[COMMENT]Anchor", in "[POST]Anchor" post
+		And the user has not entered text into the subsequent comment box,
+		When the user clicks on the preview button for that comment,
+		Then the user will be shown a message to enter text in order to see a preview.
+		
 
 	testCommentOnPostPreview():
 		Given that a user is in the comments section of the "[POST]Anchor" post
@@ -94,13 +95,13 @@ so that I may see what how my comment text will be formatted once submitted.
 		Then the user will be shown a preview containing the text they entered into the comment box.
 
 	testCommentOnCommentPreview():
-		Given that a user has selected to reply to a comment in "[POST]Anchor" post
+		Given that a user has selected to reply to a comment, "[COMMENT]Anchor", in "[POST]Anchor" post
 		And the user has entered text into the subsequent reply comment box,
 		When the user clicks on the preview button for that reply comment,
 		Then the user will be shown a preview containing the text they entered into the reply comment box.
 
 	testCommentOnCommentCancel():	
-		Given the user has entered text into a reply comment box for the "[Anchor]Comment" comment
+		Given the user has entered text into a reply comment box for the "[COMMENT]Anchor" comment
 		And is viewing a preview of the reply,
 		When the user clicks on the cancel button for that reply comment,
 		Then the user will be no longer see the preview or editable reply comment box.
