@@ -9,7 +9,6 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -38,7 +37,6 @@ public class AccountTest {
 	public void setUp() throws Exception {
 		driver = new FirefoxDriver();
 		driver.get("https://www.voat.co");
-		Random r = new Random();
 		username = "cs1632";
 		password = "Foobar123!";
 		wait = new WebDriverWait(driver, 10);
@@ -100,7 +98,6 @@ public class AccountTest {
 			fail(e.getMessage());
 		}
 		WebElement body2 = driver.findElement(By.tagName("body"));
-		String classNameToggled = body2.getAttribute("class");
 		String colorToggled = body2.getCssValue("background-color");
 
 		assertNotEquals(colorOriginal, colorToggled);

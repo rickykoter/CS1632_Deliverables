@@ -5,11 +5,9 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
  * As a user,
@@ -20,9 +18,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  */
 
 public class SubverseNavigateTest {
-	private static String username = "cs1632";
-	private static String password = "Foobar123!";
-	private static WebDriverWait wait;
 	private static WebDriver driver;
 	
 	// SET AND TEAR DOWN //
@@ -31,7 +26,6 @@ public class SubverseNavigateTest {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		driver = new FirefoxDriver();
-		wait = new WebDriverWait(driver, 10);
 	}
 
 	@AfterClass
