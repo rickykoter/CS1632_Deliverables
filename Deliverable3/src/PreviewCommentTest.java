@@ -63,12 +63,13 @@ public class PreviewCommentTest {
 		driver.get("https://www.voat.co/v/TestCS1632/comments/" + postID);
 	}
 
-	// TEST //
+	// TESTS //
 
-	// Given that a user has selected to reply to a comment in "[POST]Anchor" post
-	// And the user has not entered text into the subsequent comment box,
-	// When the user clicks on the preview button for that comment,
-	// Then the user will be shown a message to enter text in order to see a preview.
+
+	// Given that a user is in the comments section of the "[POST]Anchor" post
+	// And the user has entered text into the main comment box,
+	// When the user clicks on the preview button,
+	// Then the user will be shown a preview containing the text they entered into the comment box.
 	@Test
 	public void testCommentOnPostPreviewEmpty() {
 		WebElement commentBox = driver.findElement(By.xpath("(//textarea[@id='Content'])[2]"));
@@ -84,11 +85,10 @@ public class PreviewCommentTest {
 		}
 	}
 	
-	
-	// Given that a user is in the comments section of the "[POST]Anchor" post
-	// And the user has entered text into the main comment box,
-	// When the user clicks on the preview button,
-	// Then the user will be shown a preview containing the text they entered into the comment box.
+	// Given that a user has selected to reply to a comment, "[COMMENT]Anchor", in "[POST]Anchor" post
+	// And the user has not entered text into the subsequent comment box,
+	// When the user clicks on the preview button for that comment,
+	// Then the user will be shown a message to enter text in order to see a preview.
 	@Test
 	public void testCommentOnCommentPreviewEmpty() {
 		String commentID = "4422002";// Anchor Comment
@@ -130,7 +130,7 @@ public class PreviewCommentTest {
 		}
 	}
 
-	// Given that a user has selected to reply to a comment in "[POST]Anchor" post
+	// Given that a user has selected to reply to a comment, "[COMMENT]Anchor", in "[POST]Anchor" post
 	// And the user has entered text into the subsequent reply comment box,
 	// When the user clicks on the preview button for that reply comment,
 	// Then the user will be shown a preview containing the text they entered into the reply comment box.
@@ -155,7 +155,8 @@ public class PreviewCommentTest {
 		}
 	}
 	
-	// Given the user has entered text into a reply comment box for the "[Anchor]Comment" comment
+	
+	// Given the user has entered text into a reply comment box for the "[COMMENT]Anchor" comment
 	// And is viewing a preview of the reply,
 	// When the user clicks on the cancel button for that reply comment,
 	// Then the user will be no longer see the preview or editable reply comment box.

@@ -54,8 +54,8 @@ public class AccountTest {
 	// TESTS //
 	
 	// Given that a user is logged in
-	// And on the front page
-	// When the user selects the logout link
+	// And on the front page,
+	// When the user selects the logout link,
 	// Then the user will be logged out of the site.
 	@Test
 	public void testLogout() {
@@ -67,16 +67,16 @@ public class AccountTest {
 	}
 
 	// Given the user is logging in
-	// And the user provides a correct user name and password
-	// When the user selects to submit his/her login credentials
-	// Then the user is successfully logged in
+	// And the user provides a correct user name and password,
+	// When the user selects to submit his/her login credentials,
+	// Then the user is successfully logged in.
 	@Test
 	public void testSuccessfulLogin() {
 		assertTrue(login());
 	}
 	
 	// Given the user is logged in
-	// When the user selects the night mode toggle link
+	// When the user selects the night mode toggle link,
 	// Then the page will assume the opposite theme as what they had.
 	@Test
 	public void testToggleDarkMode() throws InterruptedException {
@@ -104,8 +104,8 @@ public class AccountTest {
 	}
 	
 	// Given that a user is logging in
-	// And the user does not provide a correct username and password
-	// When the user submits his/her login credentials
+	// And the user does not provide a correct username and password,
+	// When the user submits his/her login credentials,
 	// Then a message will display noting the incorrect credentials.
 	@Test
 	public void testIncorrectLogin() {
@@ -123,8 +123,8 @@ public class AccountTest {
 	}
 
 	// Given that a user is logged in
-	// And on the account manage page
-	// When when the user enters and saves a bio for his/her account
+	// And on the account manage page,
+	// When the user enters and saves a bio for his/her account,
 	// Then the bio will be set for his/her account.  
 	@Test
 	public void testSetBio() {
@@ -143,7 +143,7 @@ public class AccountTest {
 
 	// UTILITIES //
 	// Attempts to login with user name and password.
-	// Return true is successful and false if not
+	// Returns true is successful and false if not.
 	private boolean login() {
 		driver.findElement(By.linkText("login")).click();
 		WebElement usernameBox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("UserName")));
