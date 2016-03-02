@@ -5,11 +5,8 @@ An archive directory of the eclipse project is also included: Deliverable3.zip.
 ## User Stories and Scenarios that are covered in the JUnit tests: ##
 
 AccountTest.java:
-
 As a user,
-
 I would like to have and manage an account,
-
 so that I may customize and save my Voat experience and configurations.
 	
 	testLogout():
@@ -45,9 +42,7 @@ so that I may customize and save my Voat experience and configurations.
 PostNavigationTest.java:
 
 As a user,
-
 I would like to be able to navigate posts within a subverse,
-
 so that I may find posts that I wish to view and share.
 
 	testNextPage():
@@ -80,9 +75,7 @@ so that I may find posts that I wish to view and share.
 PreviewCommentTest.java:
 
 As a user,
-
 I would like to preview comments and replies on posts,
-
 so that I may see what how my comment text will be formatted once submitted.
 
 	testCommentOnPostPreviewEmpty():
@@ -120,9 +113,7 @@ so that I may see what how my comment text will be formatted once submitted.
 SubverseNavigateTest.java:
 
 As a user,
-
 I would like to be able to navigate between subverses,
-
 so that I may find the subverse that best fit my current interests.
 
 	testExploreVoatLink():
