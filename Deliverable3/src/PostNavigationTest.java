@@ -47,8 +47,8 @@ public class PostNavigationTest {
 
 	// TESTS //
 	
-	// Given that a user is on the front page, page 0, of the /v/programming subverse
-	// When the user selects the next link 
+	// Given that a user is on the front page, page 0, of the /v/programming subverse,
+	// When the user selects the next link,
 	// Then the user will be sent to the next page, page 1.
 	@Test
 	public void testNextPage() {
@@ -63,8 +63,8 @@ public class PostNavigationTest {
 
 	}
 	
-	// Given that a user is on the front page, page 0, of the /v/programming subverse
-	// When the user selects the Top and all link
+	// Given that a user is on the front page, page 0, of the /v/programming subverse,
+	// When the user selects the Top and all link,
 	// Then the user will be directed to a page containing a sorted list of posts descending by number of votes.
 	@Test
 	public void testTopAllSort() {
@@ -84,8 +84,8 @@ public class PostNavigationTest {
 		}
 	}
 
-	// Given that a user is on the front page, page 0, of the /v/programming subverse
-	// When the user selects the New link
+	// Given that a user is on the front page, page 0, of the /v/programming subverse,
+	// When the user selects the New link,
 	// Then the user will be directed to a page containing a sorted list of posts descending by date.
 	@Test
 	public void testNewSort() throws ParseException {
@@ -109,8 +109,8 @@ public class PostNavigationTest {
 	}
 
 	// Given that a user is on the front page, page 0, of the /v/programming subverse
-	// And the user has entered a search term into the search box
-	// When the user submits the search term
+	// And the user has entered a search term into the search box,
+	// When the user submits the search term,
 	// Then the user will be directed to a page containing the results for the search term.
 	@Test
 	public void testSearchWithin() {
@@ -124,9 +124,9 @@ public class PostNavigationTest {
 		assertEquals("Here are your search results for the term \"testing\":", searchResultsAlert);
 	}
 	
-	// Given that a user requests the page at address http://www.voat.co/v/programming
-	// When the page loads
-	// Then the page will be contain the default "Hot" sorting of posts for the programming subverse
+	// Given that a user requests the page at address http://www.voat.co/v/programming,
+	// When the page loads,
+	// Then the page will be contain the default "Hot" sorting of posts for the programming subverse.
 	@Test
 	public void testDefaultToHot() {
 		WebElement selected = driver.findElement(By.cssSelector("ul.tabmenu > li.selected > a"));

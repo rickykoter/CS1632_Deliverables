@@ -41,8 +41,8 @@ public class SubverseNavigateTest {
 
 	// TESTS //
 	// Given that a user is on the landing page for Voat
-	// And the user is not logged in
-	// When the user clicks on the "Explore Voat" link
+	// And the user is not logged in,
+	// When the user clicks on the "Explore Voat" link,
 	// Then the user is directed to a page titled "Most popular subverses" 
 	//	that contains 25 of the most popular subverses.
 	@Test
@@ -56,10 +56,10 @@ public class SubverseNavigateTest {
 	
 	// TESTS //
 	// Given that a user is on the landing page for Voat
-	// And the user is not logged in
-	// When the user clicks on the "Explore Voat" link
-	// Then the user is directed to a subverse page 
-	//	which has includes "/v/<subverse name>" in its address.
+	// And the user is not logged in,
+	// When the user clicks on the "Explore Voat" link,
+	// Then the user is directed to a page titled "Most popular subverses" 
+	//	that contains 25 of the most popular subverses.
 	@Test
 	public void testRandomSubverse() {
 		driver.findElement(By.linkText("Random Subverse")).click();
@@ -68,8 +68,8 @@ public class SubverseNavigateTest {
 	}
 
 	// Given that a user is on the front page, page 0, of the /v/programming subverse
-	// And the user is not logged in
-	// When the user clicks on the "Voat" image link
+	// And the user is not logged in,
+	// When the user clicks on the "Voat" image link,
 	// Then the user is directed to to the landing page for Voat which contains the
 	// 	title "Voat - have your say".
 	@Test
@@ -81,8 +81,8 @@ public class SubverseNavigateTest {
 	}
 	
 	// Given that a user is on the landing page for Voat
-	// And the user is not logged in
-	// When the user clicks on the "technology" link in the header
+	// And the user is not logged in,
+	// When the user clicks on the "technology" link in the header,
 	// Then the user is directed to the technology subverse at address "/v/technology/".
 	@Test
 	public void testTechnologySubverseLinkFromHeader() {
@@ -93,8 +93,8 @@ public class SubverseNavigateTest {
 	}
 	
 	// Given that a user is on the landing page for Voat
-	// And the user is not logged in
-	// When the user clicks on the subverse link for the first post
+	// And the user is not logged in,
+	// When the user clicks on the subverse link for the first post,
 	// Then the user should be redirected to that subverse.
 	@Test
 	public void testSubverseLinkFromPost() {

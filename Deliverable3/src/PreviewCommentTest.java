@@ -66,8 +66,8 @@ public class PreviewCommentTest {
 	// TEST //
 
 	// Given that a user has selected to reply to a comment in "[POST]Anchor" post
-	// And the user has not entered text into the subsequent comment box
-	// When the user clicks on the preview button for that comment
+	// And the user has not entered text into the subsequent comment box,
+	// When the user clicks on the preview button for that comment,
 	// Then the user will be shown a message to enter text in order to see a preview.
 	@Test
 	public void testCommentOnPostPreviewEmpty() {
@@ -86,8 +86,8 @@ public class PreviewCommentTest {
 	
 	
 	// Given that a user is in the comments section of the "[POST]Anchor" post
-	// And the user has entered text into the main comment box
-	// When the user clicks on the preview button
+	// And the user has entered text into the main comment box,
+	// When the user clicks on the preview button,
 	// Then the user will be shown a preview containing the text they entered into the comment box.
 	@Test
 	public void testCommentOnCommentPreviewEmpty() {
@@ -110,8 +110,8 @@ public class PreviewCommentTest {
 	
 	
 	// Given that a user is in the comments section of the "[POST]Anchor" post
-	// And the user has entered text into the main comment box
-	// When the user clicks on the preview button
+	// And the user has entered text into the main comment box,
+	// When the user clicks on the preview button,
 	// Then the user will be shown a preview containing the text they entered into the comment box.
 	@Test
 	public void testCommentOnPostPreview() {
@@ -131,8 +131,8 @@ public class PreviewCommentTest {
 	}
 
 	// Given that a user has selected to reply to a comment in "[POST]Anchor" post
-	// And the user has entered text into the subsequent reply comment box
-	// When the user clicks on the preview button for that reply comment
+	// And the user has entered text into the subsequent reply comment box,
+	// When the user clicks on the preview button for that reply comment,
 	// Then the user will be shown a preview containing the text they entered into the reply comment box.
 	@Test
 	public void testCommentOnCommentPreview() {
@@ -156,8 +156,8 @@ public class PreviewCommentTest {
 	}
 	
 	// Given the user has entered text into a reply comment box for the "[Anchor]Comment" comment
-	// And is viewing a preview of the reply
-	// When the user clicks on the cancel button for that reply comment
+	// And is viewing a preview of the reply,
+	// When the user clicks on the cancel button for that reply comment,
 	// Then the user will be no longer see the preview or editable reply comment box.
 	@Test
 	public void testCommentOnCommentCancel() {
