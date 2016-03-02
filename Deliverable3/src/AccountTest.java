@@ -14,12 +14,14 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 /**
- * As a user I would like to have and manage an account so that I may customize
- * my Voat experience.
+ * As a user,
+ * I would like to have and manage an account,
+ * so that I may customize and save my Voat experience and configurations.
  * 
- * @author RichardKotermanski
+ * @author Richard Kotermanski
  *
  */
+
 public class AccountTest {
 	private StringBuffer verificationErrors = new StringBuffer();
 	private WebDriver driver;
@@ -29,6 +31,9 @@ public class AccountTest {
 
 	// SET UP AND TEAR DOWN //
 
+	// Before each test, set the page to the home page
+	// and with a new driver to ensure logins/sessions to not carry
+	// over between tests.
 	@Before
 	public void setUp() throws Exception {
 		driver = new FirefoxDriver();
@@ -64,7 +69,7 @@ public class AccountTest {
 	}
 
 	// Given the user is logging in
-	// And the user provides a correct username and password
+	// And the user provides a correct user name and password
 	// When the user selects to submit his/her login credentials
 	// Then the user is successfully logged in
 	@Test
@@ -140,7 +145,8 @@ public class AccountTest {
 	}
 
 	// UTILITIES //
-
+	// Attempts to login with user name and password.
+	// Return true is successful and false if not
 	private boolean login() {
 		driver.findElement(By.linkText("login")).click();
 		WebElement usernameBox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("UserName")));
@@ -150,7 +156,8 @@ public class AccountTest {
 		passwordBox.submit();
 		return isElementPresent(By.linkText("cs1632"));
 	}
-
+	
+	// Returns true if an element exists on the page
 	private boolean isElementPresent(By by) {
 		try {
 			driver.findElement(by);
