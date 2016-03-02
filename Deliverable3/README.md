@@ -1,10 +1,11 @@
 The JUnit Tests for Voat and their commented user stories and scenarios are loacated in the 'src' directory.
 The appropriate Selenium and JUnit jars must be included for the code to build and run.  
-A archive directory of the eclipse project is also included: Deliverable3.zip.
+An archive directory of the eclipse project is also included: Deliverable3.zip.
 
 ## User Stories and Scenarios that are covered in the JUnit tests: ##
 
 AccountTest.java:
+
 As a user,
 I would like to have and manage an account,
 so that I may customize and save my Voat experience and configurations.
@@ -40,6 +41,7 @@ so that I may customize and save my Voat experience and configurations.
 
 
 PostNavigationTest.java:
+
 As a user,
 I would like to be able to navigate posts within a subverse,
 so that I may find posts that I wish to view and share.
@@ -71,7 +73,8 @@ so that I may find posts that I wish to view and share.
 		Then the page will be contain the default "Hot" sorting of posts for the programming subverse.
 
 
-PreviewCommentTest.java
+PreviewCommentTest.java:
+
 As a user,
 I would like to preview comments and replies on posts,
 so that I may see what how my comment text will be formatted once submitted.
@@ -108,7 +111,8 @@ so that I may see what how my comment text will be formatted once submitted.
 		Then the user will be no longer see the preview or editable reply comment box.
 
 
-SubverseNavigateTest.java
+SubverseNavigateTest.java:
+
 As a user,
 I would like to be able to navigate between subverses
 So that I may find the subverse that best fit my current interests.
