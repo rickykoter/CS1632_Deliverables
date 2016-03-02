@@ -124,7 +124,7 @@ public class AccountTest {
 
 	// Given that a user is logged in
 	// And on the account manage page
-	// When when the user enters and saves a bio for his/her account
+	// When the user enters and saves a bio for his/her account
 	// Then the bio will be set for his/her account.  
 	@Test
 	public void testSetBio() {
