@@ -1,5 +1,4 @@
 import static org.junit.Assert.*;
-
 import java.util.List;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -78,7 +77,7 @@ public class SubverseNavigateTest {
 	// And the user is not logged in
 	// When the user clicks on the "Voat" image link
 	// Then the user is directed to to the landing page for Voat which contains the
-	// 	title "Voat - have it your say".
+	// 	title "Voat - have your say".
 	@Test
 	public void testHomeImgLink() {
 		driver.get("http://www.voat.co/v/programming");
