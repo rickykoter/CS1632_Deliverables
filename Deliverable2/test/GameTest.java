@@ -310,7 +310,6 @@ public class GameTest {
 		Game g = new Game(m, p);
 		String res = g.progress("l");
 		assertTrue(res.contains("You see nothing"));
-		verify(p, times(0)).acquireItem(any());
 	}
 	
 	
