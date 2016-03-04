@@ -1,7 +1,7 @@
 # Deliverable 2
 The files containing the Program Code are located in the src directory, and the files containing their corresponding Test Code are located in the test directory. 
 
-# How to build/run the program code:
+## How to build/run the program code:
 1. After cloning this repo (https://github.com/rickykoter/CS1632_Deliverables), navigate to the <pathto git dir>/CS1632_Deliverables/Deliverable2/src in your terminal.
 
 2. From there, use the java compiler to compile the Program Code: 
@@ -12,7 +12,7 @@ The files containing the Program Code are located in the src directory, and the 
 
 4. The game should be runnin and be playable through the terminal.
 
-# How to build/run the program code:
+## How to build/run the program code:
 1.  After cloning this repo (https://github.com/rickykoter/CS1632_Deliverables), navigate to the <pathto git dir>/CS1632_Deliverables/Deliverable2/src in your terminal.
 
 2.  With the mockito and junit jars in the directory along with the test java files, issue the following command to build:
